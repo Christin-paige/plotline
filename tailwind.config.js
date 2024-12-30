@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        specialElite: ['"Special Elite"','serif'],
+        body: ['"Special Elite"', 'serif'],
+      }
+    },
   },
   plugins: [],
 }
