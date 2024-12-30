@@ -5,6 +5,18 @@ export default function LandingPage() {
 
     const apiKey = import.meta.env.VITE_API_KEY;
     
+    useEffect (() => {
+        fetch(`https://www.googleapis.com/books/v1/volumes?q=search+terms&key=${apiKey}`)
+        .then(response => response.json())
+        .then((data) => {
+            console.log(data)
+         
+        })
+        .catch((error) => {
+            console.error("Error fetching data:", error);
+        });
+    }, []);
+
   return (
     <>
       <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
