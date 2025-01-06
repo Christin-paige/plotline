@@ -1,21 +1,22 @@
-import { useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
 export default function LandingPage() {
-    const [search, setSearch] = useState([])
+  const [search, setSearch] = useState([]);
 
-    const apiKey = import.meta.env.VITE_API_KEY;
-    
-    useEffect (() => {
-        fetch(`https://www.googleapis.com/books/v1/volumes?q=search+terms&key=${apiKey}`)
-        .then(response => response.json())
-        .then((data) => {
-            console.log(data)
-         
-        })
-        .catch((error) => {
-            console.error("Error fetching data:", error);
-        });
-    }, []);
+  const apiKey = import.meta.env.VITE_API_KEY;
+
+  useEffect(() => {
+    fetch(
+      `https://www.googleapis.com/books/v1/volumes?q=search+terms&key=${apiKey}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
 
   return (
     <>
@@ -23,7 +24,7 @@ export default function LandingPage() {
         <div class="mb-4">
           <label
             class="block text-gray-700 text-sm font-bold mb-2"
-            for="username"
+            for="search"
           >
             search for a book
           </label>
