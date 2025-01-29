@@ -10,9 +10,7 @@ export default function App() {
     const[books, setBooks] = useState([])
     const [searchTerm, setSearchTerm] = useState(''); // Search input state
   
-    useEffect(() => {
-      console.log("current search term:", searchTerm)
-      },[searchTerm]);
+   
 
       useEffect(() => {
         console.log("🔥 useEffect triggered! Current search term:", searchTerm);
