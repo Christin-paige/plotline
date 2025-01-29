@@ -2,7 +2,7 @@ import { useState } from 'react'
 //import 2 images - filled heart, empty heart
 
 
-export default function BookCard(){
+export default function BookCard({ books }){
     const[bookCard, setBookCard] = useState({
         title: "",
         author: "",
@@ -22,7 +22,9 @@ export default function BookCard(){
 
     return (
         <>
-        
+        <div>
+            {books}
+        </div>
         </>
     )
 }
