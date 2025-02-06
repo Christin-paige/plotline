@@ -6,39 +6,41 @@ export default function LandingPage({ books }) {
    
  
 return(
-      <ul>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
         {books.length > 0 ? (
           books.map((book, index) => (
-            <li key={index} style={{ marginBottom: '20px', listStyle: 'none', display: 'flex', alignItems: 'center' }}>
+            <div key={index} className="bg-gray-100 p-4 rounded-lg shadow-md ">
+              <h2 className="text-lg font-semibold">{book.volumeInfo.title}</h2>
+              <p className="text-sm text-gray-700">
+                <strong>Author:</strong> {book.volumeInfo.authors?.join(",")||"Unknown"}
+              </p>
               {book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail ? (
                    <img
+                   className="w-full h-38 sm:h-48 object-cover"
                    src={book.volumeInfo.imageLinks.thumbnail}
                    alt={`${book.volumeInfo.title} cover`}
-                   style={{ width: '100px', height: 'auto', marginRight: '10px' }}
+                  
                  />
               ) : (
-                <div
-                style={{
-                  width: '100px',
-                  height: '150px',
-                  backgroundColor: '#f0f0f0',
-                  display: 'inline-block',
-                  marginRight: '10px',
-                }}
-              >
+                <div className="px-6 py-4">
                 No image
                 </div>
               )}
-              <div>
-            <strong>{book.volumeInfo.title}</strong> 
-             <p> by: {book.volumeInfo.authors}</p>
-                          
-                                 </div>
-         </li>
+             
+          <div className="mt-2 flex-1">
+                <p className="text-gray-700 text-base pt-8">
+                   {book.volumeInfo.description}
+                </p>
+              </div>
+              </div>
+                
+            
+        
         ))
       ):(
         <p>no books found.</p>
       )}
-      </ul>
+      
+      </div>
   );
 }
