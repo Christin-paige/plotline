@@ -5,7 +5,7 @@ import {useState, useEffect} from 'react';
 
 //should there be a new array on the landing page that holds the books read?
 const [booksRead, setBooksRead] = useState([]);
-const [favoriteBook, setFavoriteBook] = useState([]);
+const [favoriteBook, setFavoriteBook] = useState(false);
 
 const apiKey = import.meta.env.VITE_API_KEY;
 

@@ -2,8 +2,8 @@ import { useState, useContext } from "react";
 import React from "react";
 import Modal from "./bookCard/Modal";
 import { BookContext } from "../context/BookContext";
-import { FaRegHeart } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
+
 
 
 export default function LandingPage() {
@@ -12,7 +12,7 @@ export default function LandingPage() {
 
   const [open, setOpen] = useState(false);
   const [selectedBook, setSelectedBook] = useState(null);
-  const [isFavorite, setIsFavorite] = useState(false)
+  const [isFavorite, setIsFavorite] = useState([])
 
   const handleOpen = (book) => {
     setSelectedBook(book);
@@ -24,8 +24,12 @@ export default function LandingPage() {
     setSelectedBook(null);
   };
 
-  const handleFavorite = () => {
-   setIsFavorite(prev => !prev)
+  const handleFavorite = (bookId) => {
+   setIsFavorite((prevFavorites) => 
+    prevFavorites.includes(bookId)
+   ? prevFavorites.filter((id) => id !== bookId) 
+   : [...prevFavorites, bookId]
+);
   
    
   }
