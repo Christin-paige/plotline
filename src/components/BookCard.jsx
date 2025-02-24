@@ -1,16 +1,15 @@
-import { useState } from 'react'
-//import 2 images - filled heart, empty heart
+import { useState } from 'react';
+import { BookContext } from "../context/BookContext";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
 
 
 export default function BookCard({ books }){
-    const[bookCard, setBookCard] = useState({
-        title: "",
-        author: "",
-        genre: "",
-        isFavorite: false,
-    });
+    const { books } = useContext(BookContext);
+   
+let emptyHeart = <FaRegHeart />
+let filledHeart = <FaHeart />
 
-    let heartIcon = bookCard.isFavorite ? emptyHeart : filledHeart;
+    let heartIcon = books.isFavorite ? emptyHeart : filledHeart;
 
     function toggleFavorite(){
         setBookCard(prevBookCard => ({

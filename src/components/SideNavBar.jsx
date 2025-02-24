@@ -1,8 +1,5 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse} from '@fortawesome/free-solid-svg-icons'
-import { faBook} from '@fortawesome/free-solid-svg-icons';
-import { faChartLine} from '@fortawesome/free-solid-svg-icons'
+
 
 
 
@@ -17,17 +14,17 @@ export default function SideNavBar(){
               <hr />
          <ul className="mt-3 text-white font-bold">
             <li className="text-white p-1 font-specialElite text-2x hover:text-pink-500">
-                <a href="" className="px-3"> <FontAwesomeIcon icon={faHouse} className="px-4"style={{color: "white",}} />
+                <a href="" className="px-3"> 
                 Home
                 </a>
             </li>
             <li className="text-white p-1 font-specialElite text-2x hover:text-pink-500">
-                <a href="" className="px-3"> <FontAwesomeIcon icon={faBook} className="px-4"style={{color: "white",}} />
+                <a href="" className="px-3"> 
                 My Books
                 </a>
             </li>
             <li className="text-white p-1 font-specialElite text-2x hover:text-pink-500">
-                <a href="" className="px-3"> <FontAwesomeIcon icon={faChartLine} className="px-4"style={{color: "white",}} />
+                <a href="" className="px-3"> 
                 Tracked
                 </a>
             </li>
